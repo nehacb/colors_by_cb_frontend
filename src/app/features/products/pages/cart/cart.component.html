@@ -1,0 +1,64 @@
+<div class="container">
+
+  <div class="cart-container">
+
+    <h1 class="details-title">
+      Your Collection
+    </h1>
+
+    <div
+      class="cart-item"
+      *ngFor="let item of cartItems$ | async">
+
+      <div class="cart-item-left">
+
+            <img
+  class="product-preview-image"
+  src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?q=80&w=1200"
+  alt="Artwork"
+/>
+
+        <div class="cart-item-title">
+          {{ item.product.name }}
+        </div>
+
+        <div class="cart-item-price">
+          ₹{{ item.product.price }}
+        </div>
+
+      </div>
+
+      <div class="cart-item-qty">
+        Qty: {{ item.quantity }}
+      </div>
+
+    </div>
+
+    <div
+      class="empty-state"
+      *ngIf="(cartItems$ | async)?.length === 0">
+
+      Your curated collection is empty.
+
+    </div>
+
+    <div class="checkout-section">
+
+      <button
+        class="checkout-btn"
+        (click)="checkoutClick$.next()"
+        [disabled]="isCheckingOut">
+
+        {{
+          isCheckingOut
+            ? 'Processing Collection...'
+            : 'Secure Checkout'
+        }}
+
+      </button>
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,5 @@
+<app-product-form
+  *ngIf="product"
+  [initialData]="product"
+  (formSubmit)="updateProduct($event)">
+</app-product-form>

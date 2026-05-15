@@ -1,0 +1,34 @@
+<h1>🎨 Art Store</h1>
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+
+  <input
+    formControlName="name"
+    placeholder="Product Name"
+  />
+
+  <div *ngIf="form.controls.name.touched && form.controls.name.invalid">
+    Name must be at least 3 characters
+  </div>
+
+  <br><br>
+
+  <input
+    formControlName="price"
+    type="number"
+    placeholder="Price"
+  />
+
+  <div *ngIf="form.controls.price.touched && form.controls.price.invalid">
+    Price must be greater than 0
+  </div>
+
+  <br><br>
+
+  <button type="submit" [disabled]="form.invalid">
+    Submit
+  </button>
+
+</form>
+
+<hr>

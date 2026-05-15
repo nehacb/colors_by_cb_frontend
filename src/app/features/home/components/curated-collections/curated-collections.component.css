@@ -1,0 +1,205 @@
+.collections-section {
+
+  padding: 120px 90px;
+
+background:
+  linear-gradient(
+    to bottom,
+    rgba(22,17,13,0.82),
+    rgba(18,15,12,0.96)
+  );
+
+    position: relative;
+
+margin-top: -50px;
+
+z-index: 6;
+
+backdrop-filter: blur(18px);
+
+border-top-left-radius: 42px;
+
+border-top-right-radius: 42px;
+
+overflow: hidden;
+
+box-shadow:
+  0 -10px 40px rgba(0,0,0,0.28);
+
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.section-header {
+
+  max-width: 760px;
+
+  margin-bottom: 70px;
+}
+
+.section-subtitle {
+
+  color: #d8a36d;
+
+  text-transform: uppercase;
+
+  letter-spacing: 3px;
+
+  font-size: 13px;
+
+  margin-bottom: 20px;
+
+  font-weight: 600;
+}
+
+.section-header h2 {
+
+  font-family: 'Cormorant Garamond', serif;
+
+  font-size: 68px;
+
+  color: #fff8f2;
+
+  margin-bottom: 24px;
+}
+
+.section-header p {
+
+  color: rgba(255,255,255,0.72);
+
+  font-size: 19px;
+
+  line-height: 1.8;
+}
+
+/* =========================================
+   GRID
+========================================= */
+
+.collections-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(320px, 1fr));
+
+  gap: 30px;
+}
+
+/* =========================================
+   CARD
+========================================= */
+
+.collection-card {
+
+  position: relative;
+
+  overflow: hidden;
+
+  border-radius: 32px;
+
+  height: 520px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.collection-card:hover {
+
+  transform: translateY(-10px);
+
+  box-shadow:
+    0 28px 70px rgba(0,0,0,0.35);
+}
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.collection-card img {
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition:
+    transform 0.7s ease;
+}
+
+.collection-card:hover img {
+
+  transform: scale(1.06);
+}
+
+/* =========================================
+   OVERLAY
+========================================= */
+
+.collection-overlay {
+
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  padding: 34px;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(0,0,0,0.82),
+      rgba(0,0,0,0.05)
+    );
+}
+
+/* =========================================
+   TEXT
+========================================= */
+
+.collection-name {
+
+  color: white;
+
+  font-size: 42px;
+
+  line-height: 1.1;
+
+  font-family: 'Cormorant Garamond', serif;
+
+  max-width: 220px;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 900px) {
+
+  .collections-section {
+
+    padding: 80px 30px;
+  }
+
+  .section-header h2 {
+
+    font-size: 48px;
+  }
+
+  .collection-card {
+
+    height: 420px;
+  }
+
+}

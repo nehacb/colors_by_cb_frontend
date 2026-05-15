@@ -1,0 +1,189 @@
+.hero-section {
+
+  position: relative;
+
+  min-height: 80vh;
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 0 90px;
+
+  overflow: hidden;
+
+  background-image:
+    url('https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?q=80&w=1200');
+
+  background-size: cover;
+
+  background-position: center;
+
+  background-repeat: no-repeat;
+}
+
+/* =========================================
+   DARK CINEMATIC OVERLAY
+========================================= */
+
+.hero-overlay {
+
+  position: absolute;
+
+  inset: 0;
+
+background:
+  linear-gradient(
+    to bottom,
+    rgba(10,8,6,0.72) 0%,
+    rgba(10,8,6,0.52) 40%,
+    rgba(10,8,6,0.72) 72%,
+    rgba(10,8,6,1) 100%
+  );
+}
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.hero-content {
+
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 760px;
+}
+
+/* =========================================
+   SUBTITLE
+========================================= */
+
+.hero-subtitle {
+
+  color: #d8a36d;
+
+  font-size: 13px;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+
+  margin-bottom: 26px;
+
+  font-weight: 600;
+}
+
+/* =========================================
+   MAIN TITLE
+========================================= */
+
+.hero-content h1 {
+
+  font-family: 'Cormorant Garamond', serif;
+
+  font-size: clamp(56px, 8vw, 96px);
+
+  line-height: 0.95;
+
+  color: #fff8f2;
+
+  margin-bottom: 30px;
+
+  font-weight: 700;
+}
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.hero-content p {
+
+  font-size: 20px;
+
+  line-height: 1.9;
+
+  color: rgba(255,255,255,0.76);
+
+  margin-bottom: 40px;
+
+  max-width: 650px;
+}
+
+/* =========================================
+   CTA
+========================================= */
+
+.hero-actions button {
+
+  background:
+    linear-gradient(
+      135deg,
+      #d8a36d,
+      #b97844
+    );
+
+  color: white;
+
+  border: none;
+
+  padding: 18px 34px;
+
+  border-radius: 999px;
+
+  font-size: 14px;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.hero-actions button:hover {
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 14px 34px rgba(185,120,68,0.35);
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-height: 820px) {
+
+  .hero-section {
+
+    min-height: auto;
+
+    padding-top: 90px;
+
+  padding-bottom: 180px;
+  }
+
+  .hero-content h1 {
+
+    font-size: 72px;
+
+    line-height: 0.95;
+  }
+
+  .hero-content p {
+
+    font-size: 17px;
+
+    margin-bottom: 28px;
+  }
+
+  .hero-actions button {
+
+    padding: 16px 28px;
+  }
+
+}

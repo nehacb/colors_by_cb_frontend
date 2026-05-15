@@ -1,0 +1,79 @@
+<div class="search-box">
+
+  <input
+    type="text"
+    [formControl]="searchControl"
+    placeholder="Search products..."
+  />
+
+</div>
+
+<select [formControl]="categoryControl">
+
+  <option value="all">
+    All
+  </option>
+
+  <option value="cheap">
+    Below ₹500
+  </option>
+
+  <option value="premium">
+    Above ₹500
+  </option>
+
+</select>
+
+
+<div *ngIf="(products$ | async)?.length === 0">
+  no products found
+</div>
+
+<div class="product-grid">
+<div *ngFor="let p of products$ | async">
+
+  <div class="product-card">
+
+    <img
+  class="product-image"
+  src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?q=80&w=1200"
+  alt="Artwork"
+/>
+
+    <div class="product-title">
+      {{ p.name }}
+    </div>
+
+    <div class="product-price">
+      ₹{{ p.price }}
+    </div>
+
+    <div class="customer-actions">
+
+      <button (click)="addToCart(p)">
+        Add To Cart
+      </button>
+
+      <button [routerLink]="['/products', p.id]">
+        View Details
+      </button>
+
+    </div>
+
+    <div class="admin-actions">
+
+      <button [routerLink]="['/edit', p.id]">
+        Edit
+      </button>
+
+      <button (click)="deleteProduct(p.id!)">
+        Delete
+      </button>
+
+    </div>
+
+  </div>
+  
+  </div>
+
+</div>

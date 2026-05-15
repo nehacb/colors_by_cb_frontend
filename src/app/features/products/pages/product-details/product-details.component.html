@@ -1,0 +1,29 @@
+<div *ngIf="product" class="details-layout">
+
+  <div class="details-image-section">
+
+    <img
+      class="product-detail-image"
+      src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?q=80&w=1200"
+      alt="Artwork"
+    />
+
+  </div>
+
+  <div class="details-info-section">
+
+    <div class="details-title">
+      {{ product.name }}
+    </div>
+
+    <div class="details-price">
+      ₹{{ product.price }}
+    </div>
+
+    <button (click)="addToCart(product)">
+      Add To Cart
+    </button>
+
+  </div>
+
+</div>

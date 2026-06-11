@@ -1,6 +1,6 @@
 .featured-artwork-section {
 
-  padding: 120px 90px;
+  padding: 100px 90px 70px;
 
   background:
     linear-gradient(
@@ -56,18 +56,6 @@
   line-height: 1.8;
 }
 
-/* =========================================
-   GRID
-========================================= */
-
-.artwork-grid {
-
-  display: grid;
-
-  grid-template-columns: 1.3fr 1fr 1fr;
-
-  gap: 30px;
-}
 
 /* =========================================
    CARD
@@ -75,25 +63,17 @@
 
 .featured-art-card {
 
-  position: relative;
+  min-width: 320px;
 
-  overflow: hidden;
+  width: 320px;
 
-  border-radius: 32px;
+  height: 460px;
 
-  min-height: 620px;
+  flex-shrink: 0;
 
-  cursor: pointer;
-
-  transition:
-    transform 0.45s ease,
-    box-shadow 0.45s ease;
+    cursor: pointer;
 }
 
-.featured-art-card.large {
-
-  min-height: 620px;
-}
 
 .featured-art-card:hover {
 
@@ -138,18 +118,36 @@
 
   display: flex;
 
-  justify-content: space-between;
+  flex-direction: column;
 
-  align-items: flex-end;
+  justify-content: flex-end;
 
-  padding: 34px;
+  padding: 24px;
 
   background:
     linear-gradient(
       to top,
-      rgba(0,0,0,0.88),
-      rgba(0,0,0,0.0)
+      rgba(0,0,0,0.9),
+      rgba(0,0,0,0)
     );
+}
+
+.art-info {
+
+  margin-bottom: 12px;
+
+  margin-bottom: 14px;
+}
+
+/* to manage the content overflow (size of the art title can be more than the size of the container) */
+.art-title {
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+  
 }
 
 /* =========================================
@@ -160,11 +158,11 @@
 
   color: white;
 
-  font-size: 34px;
+  font-size: 32px;
 
   font-family: 'Cormorant Garamond', serif;
 
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .art-artist {
@@ -172,34 +170,20 @@
   color: rgba(255,255,255,0.7);
 
   font-size: 14px;
+
 }
 
 .art-price {
 
-  color: #f0c28b;
+  color: rgba(255,255,255,0.72);
+  font-size: 15px;
 
-  font-size: 18px;
-
-  font-weight: 600;
+  font-weight: 500;
 }
 
 /* =========================================
    MOBILE
 ========================================= */
-
-@media (max-width: 1100px) {
-
-  .artwork-grid {
-
-    grid-template-columns: 1fr;
-  }
-
-  .featured-art-card {
-
-    min-height: 500px;
-  }
-
-}
 
 @media (max-width: 900px) {
 
@@ -213,4 +197,54 @@
     font-size: 48px;
   }
 
+}
+
+/* layout container which controls flow direction, spacing and scrolling */
+
+.artwork-scroll-container {
+
+  display: flex;
+
+  gap: 24px;
+
+  overflow-x: auto;
+
+  padding-bottom: 10px;
+
+  scroll-behavior: smooth;
+
+}
+
+.artwork-scroll-container {
+
+  scrollbar-width: none;
+}
+
+.artwork-scroll-container::-webkit-scrollbar {
+
+  display: none;
+}
+
+/* presentation component which controlls appearance, hover effects and artwork display */
+.featured-art-card {
+
+  position: relative;
+
+  overflow: hidden;
+
+  border-radius: 32px;
+
+  min-width: 320px;
+
+  width: 320px;
+
+  height: 460px;
+
+  flex-shrink: 0;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.45s ease,
+    box-shadow 0.45s ease;
 }

@@ -24,7 +24,11 @@
 
 </select>
 
+<!-- without async: there will be memory leak when this component is destroyed -->
 
+<!-- the template becomes reactive subscription layer because the async pipe automatically subscribes 
+ and unsubscribes from the observable -->
+ 
 <div *ngIf="(products$ | async)?.length === 0">
   no products found
 </div>
@@ -62,7 +66,7 @@
 
     <div class="admin-actions">
 
-      <button [routerLink]="['/edit', p.id]">
+      <button [routerLink]="['/products/edit', p.id]">
         Edit
       </button>
 

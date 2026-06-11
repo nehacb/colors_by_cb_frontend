@@ -32,6 +32,14 @@
         Qty: {{ item.quantity }}
       </div>
 
+    <div>
+      <button
+        class="remove-btn"
+        (click)="removeFromCart(item.product.id!)">
+        Remove
+      </button>
+    </div>
+
     </div>
 
     <div
@@ -41,6 +49,10 @@
       Your curated collection is empty.
 
     </div>
+
+      <div class="total-amount">
+        Total: ₹{{ cartTotal$ | async }}
+      </div>
 
     <div class="checkout-section">
 

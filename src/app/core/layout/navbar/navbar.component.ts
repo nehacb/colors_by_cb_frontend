@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { map } from 'rxjs';
 
 import { CartService } from 'src/app/services/cart.service';
 
@@ -11,6 +12,6 @@ export class NavbarComponent {
 
   constructor(private cartService: CartService) {}
 
-  cartItems$ = this.cartService.cart$;
+  cartCount$ = this.cartService.cartCount$;
 
 } 

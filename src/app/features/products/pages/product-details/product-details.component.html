@@ -1,29 +1,55 @@
-<div *ngIf="product" class="details-layout">
+<section class="details-page">
 
-  <div class="details-image-section">
+  <div class="details-layout">
 
-    <img
-      class="product-detail-image"
-      src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?q=80&w=1200"
-      alt="Artwork"
-    />
+    <!-- IMAGE -->
+
+    <div class="details-image-section">
+
+      <img
+        class="product-detail-image"
+
+        [src]="product?.imageUrl"
+
+        [alt]="product?.name"
+      />
+
+    </div>
+
+    <!-- CONTENT -->
+
+    <div class="details-info-section">
+
+      <div class="details-subtitle">
+        Featured Artwork
+      </div>
+
+      <h1>
+        {{ product?.name }}
+      </h1>
+
+      <div class="artist-name">
+        by {{ product?.artistName }}
+      </div>
+
+      <div class="price">
+        ₹ {{ product?.price }}
+      </div>
+
+      <p class="description">
+        {{ product?.description }}
+      </p>
+
+      <div class="category">
+        {{ product?.category }}
+      </div>
+
+      <button class="add-cart-btn">
+        Add To Collection
+      </button>
+
+    </div>
 
   </div>
 
-  <div class="details-info-section">
-
-    <div class="details-title">
-      {{ product.name }}
-    </div>
-
-    <div class="details-price">
-      ₹{{ product.price }}
-    </div>
-
-    <button (click)="addToCart(product)">
-      Add To Cart
-    </button>
-
-  </div>
-
-</div>
+</section>

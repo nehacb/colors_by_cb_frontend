@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Product, ProductService } from 'src/app/services/product.service';
+import { ProductService } from 'src/app/services/product.service';
+import { Product } from 'src/app/models/product';
 import { Router } from '@angular/router';
 
 @Component({
@@ -18,11 +19,14 @@ export class CreateProductPageComponent {
   addProduct(product: Product) {
  
   this.productService.addProduct(product)
+// subscribe() executes the Observable and waits asynchronously for the API response,
+// then handles it with the next/error callbacks
+
     .subscribe({
 
       next: () => {
 
-        this.router.navigate(['/list']);
+        this.router.navigate(['/products']);
 
       },
 

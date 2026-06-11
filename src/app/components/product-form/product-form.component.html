@@ -25,6 +25,51 @@
 
   <br><br>
 
+  <input
+    formControlName="artistName"
+    placeholder="Artist Name"
+  />
+
+  <div *ngIf="form.controls.artistName.touched && form.controls.artistName.invalid">
+    Artist name is required (at least 2 characters)
+  </div>
+
+  <br><br>
+
+  <input
+    formControlName="category"
+    placeholder="Category"
+  />
+
+  <div *ngIf="form.controls.category.touched && form.controls.category.invalid">
+    Category is required
+  </div>
+
+  <br><br>
+
+  <input
+    formControlName="imageUrl"
+    placeholder="Image URL"
+  />
+
+  <div *ngIf="form.controls.imageUrl.touched && form.controls.imageUrl.invalid">
+    Image URL is required
+  </div>
+
+  <br><br>
+
+  <textarea
+    formControlName="description"
+    placeholder="Description"
+    rows="4"
+  ></textarea>
+
+  <div *ngIf="form.controls.description.touched && form.controls.description.invalid">
+    Description is required (at least 10 characters)
+  </div>
+
+  <br><br>
+
   <button type="submit" [disabled]="form.invalid">
     Submit
   </button>

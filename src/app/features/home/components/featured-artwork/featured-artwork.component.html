@@ -17,11 +17,13 @@
 
   </div>
 
-  <div class="artwork-grid">
+  <div class="artwork-scroll-container">
 
-    <!-- LARGE FEATURED ART -->
+    <!-- FEATURED ART -->
 
-    <div class="featured-art-card large">
+    <div *ngFor="let product of products" class="featured-art-card"
+    
+      [routerLink]="['/products', product.id]">
 
       <img
         src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?q=80&w=1200"
@@ -30,88 +32,26 @@
 
       <div class="art-overlay">
 
-        <div class="art-meta">
-
-          <div class="art-title">
-            Midnight Botanicals
-          </div>
-
-          <div class="art-artist">
-            by Elena Moreau
-          </div>
-
-        </div>
+      <div class="art-info">
+      
+        <h3 class="art-title">
+          {{ product.name }}
+        </h3>
+      
+        <p class="art-artist">
+          by {{ product.artistName }}
+        </p>
+      
+      </div>
 
         <div class="art-price">
-          ₹18,500
+          ₹{{ product.price }}
         </div>
 
       </div>
 
     </div>
 
-    <!-- SMALL CARD 1 -->
-
-    <div class="featured-art-card">
-
-      <img
-        src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=1200"
-        alt="Artwork"
-      />
-
-      <div class="art-overlay">
-
-        <div class="art-meta">
-
-          <div class="art-title">
-            Clay Silence
-          </div>
-
-          <div class="art-artist">
-            by Aarav Mehta
-          </div>
-
-        </div>
-
-        <div class="art-price">
-          ₹9,800
-        </div>
-
-      </div>
-
     </div>
-
-    <!-- SMALL CARD 2 -->
-
-    <div class="featured-art-card">
-
-      <img
-        src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?q=80&w=1200"
-        alt="Artwork"
-      />
-
-      <div class="art-overlay">
-
-        <div class="art-meta">
-
-          <div class="art-title">
-            Soft Horizon
-          </div>
-
-          <div class="art-artist">
-            by Sofia Laurent
-          </div>
-
-        </div>
-
-        <div class="art-price">
-          ₹12,400
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
 
 </section>

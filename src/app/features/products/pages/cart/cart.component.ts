@@ -16,9 +16,15 @@ export class CartComponent {
     constructor(private cartService: CartService) {}
   
     cartItems$ = this.cartService.cart$;
+
+    cartTotal$ = this.cartService.cartTotal$;
     
 ngOnInit() {
-  // Here you can add the logic to handle the checkout process, such as calling a service to process the order
+  
+  // the items in the cart should be verified wrt the items in the backend and 
+  // then the checkout process should be initiated, 
+  // which can involve multiple steps such as payment processing, order confirmation, etc.
+
   this.checkoutClick$
     .pipe(
 
@@ -58,5 +64,11 @@ fakeCheckoutApi() {
   );
 
 }
+
+removeFromCart(productId: number) {
+
+  this.cartService.removeFromCart(productId); 
+}
+
 
 }

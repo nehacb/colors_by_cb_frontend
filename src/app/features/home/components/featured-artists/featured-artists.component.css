@@ -1,39 +1,28 @@
-.featured-artists-section {
+.featured-artwork-section {
 
-  padding: 120px 90px;
+  padding: 140px 0;
 
-background:
+  background:
     linear-gradient(
-    to bottom,
-    rgba(24,18,14,0.82),
-    rgba(18,14,11,0.94)
-);
+      to bottom,
+      #18120e,
+      #0f0b09
+    );
 
-    margin-top: -120px;
-
-    position: relative;
-
-    z-index: 5;
-
-      backdrop-filter: blur(18px);
-
-  border-top-left-radius: 40px;
-
-  border-top-right-radius: 40px;
-
-  box-shadow:
-  0 -10px 40px rgba(0,0,0,0.28);
+  overflow: hidden;
 }
 
 /* =========================================
-   SECTION HEADER
+   HEADER
 ========================================= */
 
 .section-header {
 
-  max-width: 760px;
+  padding: 0 90px;
 
   margin-bottom: 70px;
+
+  max-width: 800px;
 }
 
 .section-subtitle {
@@ -46,7 +35,7 @@ background:
 
   font-size: 13px;
 
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 
   font-weight: 600;
 }
@@ -55,7 +44,7 @@ background:
 
   font-family: 'Cormorant Garamond', serif;
 
-  font-size: 68px;
+  font-size: 74px;
 
   color: #fff8f2;
 
@@ -69,6 +58,176 @@ background:
   font-size: 19px;
 
   line-height: 1.8;
+}
+
+/* =========================================
+   HORIZONTAL SCROLL
+========================================= */
+
+.artwork-scroll-container {
+
+  display: flex;
+
+  gap: 28px;
+
+  overflow-x: auto;
+
+  padding: 0 90px 20px;
+
+  scroll-behavior: smooth;
+
+  scrollbar-width: none;
+}
+
+.artwork-scroll-container::-webkit-scrollbar {
+
+  display: none;
+}
+
+/* =========================================
+   CARD
+========================================= */
+
+.artwork-card {
+
+  position: relative;
+
+  min-width: 420px;
+
+  height: 620px;
+
+  border-radius: 32px;
+
+  overflow: hidden;
+
+  flex-shrink: 0;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+.artwork-card:hover {
+
+  transform:
+    translateY(-10px)
+    scale(1.01);
+
+  box-shadow:
+    0 28px 80px rgba(0,0,0,0.4);
+}
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.artwork-card img {
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition:
+    transform 0.6s ease;
+}
+
+.artwork-card:hover img {
+
+  transform: scale(1.05);
+}
+
+/* =========================================
+   OVERLAY
+========================================= */
+
+.artwork-overlay {
+
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: flex-end;
+
+  padding: 36px;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(0,0,0,0.88),
+      rgba(0,0,0,0.08)
+    );
+}
+
+.artwork-name {
+
+  color: white;
+
+  font-size: 38px;
+
+  font-family: 'Cormorant Garamond', serif;
+
+  margin-bottom: 8px;
+}
+
+.artwork-artist {
+
+  color: rgba(255,255,255,0.74);
+
+  font-size: 14px;
+
+  letter-spacing: 1px;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 900px) {
+
+  .section-header {
+
+    padding: 0 30px;
+  }
+
+  .section-header h2 {
+
+    font-size: 52px;
+  }
+
+  .artwork-scroll-container {
+
+    padding: 0 30px 20px;
+  }
+
+  .artwork-card {
+
+    min-width: 300px;
+
+    height: 480px;
+  }
+
+}
+
+.featured-artists-section {
+
+  padding: 140px 90px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #120f0c,
+      #18120e
+    );
 }
 
 /* =========================================
@@ -97,6 +256,8 @@ background:
 
   border-radius: 28px;
 
+  height: 520px;
+
   background: rgba(255,255,255,0.03);
 
   transition:
@@ -120,7 +281,7 @@ background:
 
   width: 100%;
 
-  height: 460px;
+  height: 100%;
 
   object-fit: cover;
 
@@ -163,7 +324,7 @@ background:
 
   color: white;
 
-  font-size: 28px;
+  font-size: 32px;
 
   font-family: 'Cormorant Garamond', serif;
 
@@ -190,14 +351,9 @@ background:
     padding: 80px 30px;
   }
 
-  .section-header h2 {
+  .artist-card {
 
-    font-size: 48px;
-  }
-
-  .artist-card img {
-
-    height: 380px;
+    height: 420px;
   }
 
 }

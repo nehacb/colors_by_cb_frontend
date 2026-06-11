@@ -1,0 +1,208 @@
+.details-page {
+
+  min-height: 100vh;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #120e0b,
+      #0d0907
+    );
+
+  padding: 120px 80px;
+}
+
+/* =========================================
+   LAYOUT
+========================================= */
+
+.details-layout {
+
+  display: grid;
+
+  grid-template-columns: 1.1fr 0.9fr;
+
+  gap: 70px;
+
+  align-items: center;
+
+  max-width: 1500px;
+
+  margin: auto;
+}
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.product-detail-image {
+
+  width: 100%;
+
+  max-height: 82vh;
+
+  object-fit: contain;
+
+  border-radius: 34px;
+
+  display: block;
+
+  box-shadow:
+    0 30px 80px rgba(0,0,0,0.45);
+}
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.details-info-section {
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+.details-subtitle {
+
+  color: #d8a36d;
+
+  text-transform: uppercase;
+
+  letter-spacing: 3px;
+
+  font-size: 13px;
+
+  margin-bottom: 26px;
+
+  font-weight: 600;
+}
+
+.details-info-section h1 {
+
+  font-family: 'Cormorant Garamond', serif;
+
+  font-size: 88px;
+
+  line-height: 0.95;
+
+  color: #fff8f2;
+
+  margin-bottom: 24px;
+}
+
+.artist-name {
+
+  color: rgba(255,255,255,0.72);
+
+  font-size: 20px;
+
+  margin-bottom: 30px;
+}
+
+.price {
+
+  color: #d8a36d;
+
+  font-size: 36px;
+
+  margin-bottom: 34px;
+
+  font-weight: 600;
+}
+
+.description {
+
+  color: rgba(255,255,255,0.72);
+
+  line-height: 1.9;
+
+  font-size: 18px;
+
+  margin-bottom: 34px;
+}
+
+.category {
+
+  align-self: flex-start;
+
+  padding: 10px 18px;
+
+  border-radius: 999px;
+
+  background: rgba(255,255,255,0.06);
+
+  color: rgba(255,255,255,0.72);
+
+  font-size: 13px;
+
+  margin-bottom: 40px;
+}
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.add-cart-btn {
+
+  align-self: flex-start;
+
+  border: none;
+
+  background:
+    linear-gradient(
+      135deg,
+      #d8a36d,
+      #b97844
+    );
+
+  color: white;
+
+  padding: 18px 34px;
+
+  border-radius: 999px;
+
+  cursor: pointer;
+
+  font-size: 13px;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.add-cart-btn:hover {
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 14px 34px rgba(185,120,68,0.35);
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 1000px) {
+
+  .details-layout {
+
+    grid-template-columns: 1fr;
+  }
+
+  .details-page {
+
+    padding: 80px 30px;
+  }
+
+  .details-info-section h1 {
+
+    font-size: 58px;
+  }
+
+}

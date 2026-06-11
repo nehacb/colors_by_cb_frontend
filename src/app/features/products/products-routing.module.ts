@@ -16,7 +16,8 @@ const routes: Routes = [
 
   {
     path: '',
-    component: ProductListComponent
+    component: ProductListComponent,
+    pathMatch: 'full'
   },
 
   {
@@ -46,7 +47,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(routes)], // forChild is used to register the routes for the ProductsModule,
+  //  which is a feature module in Angular.
   exports: [RouterModule]
 })
 export class ProductsRoutingModule { }

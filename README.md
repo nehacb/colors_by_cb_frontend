@@ -1,27 +1,108 @@
-# ArtpageFrontend
+# 🎨 Colors by CB - Art Marketplace (Frontend)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+An enterprise-style Art Marketplace frontend built using **Angular**. The application provides a modern shopping experience with secure authentication, role-based access control, and responsive user interfaces.
 
-## Development server
+## 🚀 Tech Stack
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Angular
+- TypeScript
+- RxJS
+- Angular Router
+- Reactive Forms
+- HTTP Interceptors
+- Route Guards
+- JWT Authentication
+- HTML5
+- CSS3
 
-## Code scaffolding
+---
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## ✨ Features
 
-## Build
+### Authentication
+- JWT Login
+- Route Guards
+- Role-Based UI
+- HTTP Interceptor
+- Persistent Login
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Products
+- Product Listing
+- Product Details
+- Product Search
+- Category Filter
+- Create Product (Admin)
+- Edit Product (Admin)
+- Delete Product (Admin)
 
-## Running unit tests
+### Shopping
+- Shopping Cart
+- Cart Count
+- Responsive Navbar
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+---
 
-## Running end-to-end tests
+## 🏗️ Architecture
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```
+Angular Components
+        │
+        ▼
+Services (Business Logic)
+        │
+        ▼
+HTTP Interceptor
+        │
+        ▼
+Spring Boot REST APIs
+```
 
-## Further help
+---
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## 📸 Screenshots
+
+> Screenshots will be added as development progresses.
+
+---
+
+## ▶️ Run Locally
+
+```bash
+npm install
+ng serve
+```
+
+Frontend runs on:
+
+```
+http://localhost:4200
+```
+
+Backend:
+
+```
+http://localhost:8081
+```
+
+---
+
+## 🔮 Future Roadmap
+
+- Image Upload
+- Product Gallery
+- Checkout
+- Order Management
+- Seller Dashboard
+- Marketplace
+- Wishlist
+- Reviews
+- Analytics
+- Cloud Deployment
+
+---
+
+## 👩‍💻 Author
+
+**Neha CB**
+
+Colors by CB

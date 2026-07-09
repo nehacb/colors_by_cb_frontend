@@ -11,6 +11,7 @@ import { ProductService } from 'src/app/services/product.service';
 import { Product } from 'src/app/models/product';
 
 import { CartService } from 'src/app/services/cart.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-product-list',
@@ -21,7 +22,9 @@ export class ProductListComponent {
 
 private refresh$ = new BehaviorSubject<void>(undefined);
 
-constructor(private productService: ProductService, private cartService: CartService) {}
+isAdmin$ = this.authService.isAdmin$;
+
+constructor(private productService: ProductService, private cartService: CartService, private authService: AuthService) {}
 
 searchControl = new FormControl('');
 categoryControl = new FormControl('all');

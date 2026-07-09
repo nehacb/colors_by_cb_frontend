@@ -6,6 +6,7 @@ import { CreateProductPageComponent } from 'src/app/features/products/pages/crea
 import { ProductDetailsComponent } from 'src/app/features/products/pages/product-details/product-details.component';
 import { EditProductPageComponent } from 'src/app/features/products/pages/edit-product-page/edit-product-page.component';
 import { CartComponent } from 'src/app/features/products/pages/cart/cart.component';
+import { authGuard } from 'src/app/core/guard/auth.guard';
 
 const routes: Routes = [
   
@@ -22,7 +23,9 @@ const routes: Routes = [
 
   {
     path: 'create',
-    component: CreateProductPageComponent
+    component: CreateProductPageComponent,
+    canActivate : [authGuard] // Protects the route with the authGuard, ensuring 
+    // that only authenticated users can access the create product page.
   },
 
   {

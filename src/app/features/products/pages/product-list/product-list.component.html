@@ -66,11 +66,11 @@
 
     <div class="admin-actions">
 
-      <button [routerLink]="['/products/edit', p.id]">
+      <button [routerLink]="['/products/edit', p.id]" *ngIf="isAdmin$ | async">
         Edit
       </button>
 
-      <button (click)="deleteProduct(p.id!)">
+      <button (click)="deleteProduct(p.id!)" *ngIf="isAdmin$ | async">
         Delete
       </button>
 

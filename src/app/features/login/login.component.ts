@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -22,7 +23,8 @@ export class LoginComponent {
   });
 
   constructor(
-    private authService: AuthService
+        private router: Router,
+        private authService: AuthService
   ){}
   
   login() {
@@ -46,8 +48,10 @@ export class LoginComponent {
         this.authService.saveToken(
           response.token
         );
+
+        this.router.navigate(['']);
       
-        console.log('Login successful');
+        this.authService.updateAdminStatus();
       
       },
     

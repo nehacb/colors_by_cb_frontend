@@ -23,7 +23,14 @@ export class JwtInterceptor implements HttpInterceptor {
 
     const token =this.authService.getToken(); 
     if(token) {
+      
       console.log('Token found in local storage: ' + token);
+
+      if (request.url.includes('/api/auth/login')) {
+        console.log('Login request detected, not adding Authorization header.');
+        return next.handle(request);
+      } 
+
       request = request.clone({
         setHeaders: {
           Authorization: `Bearer ${token}`

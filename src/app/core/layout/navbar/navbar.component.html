@@ -18,12 +18,17 @@
       Collection
     </a>
 
-    <a routerLink="/products/create">
+    <a
+      routerLink="/products/create"
+      *ngIf="isAdmin$ | async">
+
       Sell Artwork
+
     </a>
 
-    <a routerLink="/products/cart"
-       class="cart-link">
+    <a
+      routerLink="/products/cart"
+      class="cart-link">
 
       Cart
 
@@ -36,6 +41,22 @@
       </span>
 
     </a>
+
+    <a
+      routerLink="/login"
+      *ngIf="!(isLoggedIn$ | async)">
+
+      Login
+
+    </a>
+
+    <button
+      *ngIf="isLoggedIn$ | async"
+      (click)="logout()">
+
+      Logout
+
+    </button>
 
   </div>
 
